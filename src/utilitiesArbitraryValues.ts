@@ -152,14 +152,17 @@ const utils: MatchedUtilities = matchUtilities({
 	cg: (value) => `{--column-gap: ${value}; -moz-column-gap: ${value}; column-gap: ${value}}`,
 	rg: (value) => `{row-gap: ${value}}`,
 	z: (value) => `{z-index: ${value}}`,
+	top: (value) => `{top: ${value}}`,
+	bottom: (value) => `{bottom: ${value}}`,
+	left: (value) => `{left: ${value}}`,
+	right: (value) => `{right: ${value}}`,
 	text: (value) => `{font-size: ${value}}`,
 	bg: (value) => `{background-color: ${value}}`,
+	br: (value) => `{border-radius: ${value}}`,
 });
 
 // Применение утилит и генерация стилей
-document.addEventListener('DOMContentLoaded', () => {
-	let totalTime = 0;
-	const start = performance.now();
+const exec = () => {
 	const extractedClasses: ClassEntity[] = extractArbitraryClasses();
 	if (extractedClasses.length === 0) return;
 
@@ -170,9 +173,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	const elemStyle: HTMLStyleElement = document.createElement('style');
 	elemStyle.innerHTML = styleText;
 	document.head.append(elemStyle);
-
-	const end = performance.now();
-
-	totalTime += end - start;
-	console.log(`Среднее время выполнения: ${totalTime.toFixed(2)} мс`); // eslint-disable-line
-});
+};
+exec();
