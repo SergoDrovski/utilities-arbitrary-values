@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                       // Целевой стандарт JavaScript
+    "module": "ESNext",                       // Используемый модульный формат
+    "strict": true,                           // Включает строгую проверку типов
+    "esModuleInterop": true,                  // Совместимость с CommonJS
+    "skipLibCheck": true,                     // Пропуск проверки типов в библиотечных файлах
+    "forceConsistentCasingInFileNames": true, // Принудительное соблюдение регистра имен файлов
+    "moduleResolution": "node",              // Резолвинг модулей
+    "resolveJsonModule": true,                // Поддержка импорта JSON
+    "isolatedModules": true,                  // Поддержка модульности
+    "baseUrl": "./",                          // Базовый URL для импортов
+    "paths": {
+      "@/*": ["src/*"]                        // Алиас для упрощения импортов
+    }
+  },
+  "include": ["src"], // Указываем, какие файлы включать
+  "exclude": ["node_modules", "dist"] // Исключаем ненужные файлы
+}
