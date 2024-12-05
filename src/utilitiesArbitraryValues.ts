@@ -156,7 +156,9 @@ const utils: MatchedUtilities = matchUtilities({
 	bottom: (value) => `{bottom: ${value}}`,
 	left: (value) => `{left: ${value}}`,
 	right: (value) => `{right: ${value}}`,
+	font: (value) => `{font: ${value.replace(/_/g, ' ')}}`,
 	text: (value) => `{font-size: ${value}}`,
+	color: (value) => `{color: ${value}}`,
 	bg: (value) => `{background-color: ${value}}`,
 	br: (value) => `{border-radius: ${value}}`,
 });
